@@ -18,6 +18,10 @@ public class UserHandler {
 		 
 		System.out.println("hello " + name);
 		
+		if(true) {
+			throw new RuntimeException("Test Exception");
+		}
+		
 		return status(HttpStatus.OK).contentType(MediaType.TEXT_EVENT_STREAM)
 				.body(Mono.just("Hello " + name), String.class);
 		
